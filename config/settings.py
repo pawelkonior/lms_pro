@@ -25,6 +25,9 @@ SECRET_KEY = 'django-insecure-&myt8f-(+np7d5^eyz!#w!+#(0p55_w36hd&n37w1#wivv6an3
 DEBUG = True
 
 ALLOWED_HOSTS = []
+INTERNAL_IPS = [
+    '127.0.0.1',
+]
 
 # Application definition
 
@@ -39,12 +42,14 @@ INSTALLED_APPS = [
     #  third party
     'crispy_forms',
     'crispy_bootstrap5',
+    'debug_toolbar',
 
     #  local
     'home.apps.HomeConfig',
 ]
 
 MIDDLEWARE = [
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
