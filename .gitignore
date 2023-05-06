@@ -5,3 +5,7 @@ db.sqlite3
 
 .vscode
 .idea
+
+media/courses
+media/files
+media/images
