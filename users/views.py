@@ -20,6 +20,10 @@ def registration_view(request):
             messages.add_message(request, messages.WARNING,
                                  f'You are registered. Please login. Your login: {form.cleaned_data.get("email")} and paswword: {form.cleaned_data.get("password")}')
             return redirect(reverse('login'))
+
+    print('*' * 20)
+    print(form.errors)
+    print('*' * 20)
     return render(request, 'users/registration.html', {'form': form})
 
 
